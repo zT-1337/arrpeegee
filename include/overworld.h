@@ -1,11 +1,10 @@
 #pragma once
 #include "types.h"
-
-#define TILE_SIZE 32
+#include <raylib.h>
 
 typedef struct {
   i32 width;
   i32 height;
 } Overworld;
 
-void DrawTiles(Overworld *overworld);
+void DrawTiles(Overworld *overworld, Camera2D *camera);
