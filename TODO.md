@@ -2,7 +2,7 @@
 
 ## Overworld System
 
-- [ ] Simple test map without textures
+- [X] Simple test map without textures
 - [ ] Player with tilebased movement, but without sprites
 - [ ] Camera movement based on the player movement
 - [ ] NPCs
