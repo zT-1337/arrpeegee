@@ -10,7 +10,7 @@
 - [ ] Simple test map with textures
 - [ ] Player with sprite
 - [ ] Animate walking player
-- [ ] Optimize Tile Rendering, so that only visible tiles get rendered
+- [X] Optimize Tile Rendering, so that only visible tiles get rendered
 
 ## Debug System
 

@@ -32,7 +32,7 @@ int main(void) {
     ClearBackground(BLACK);
 
     BeginMode2D(camera);
-    DrawTiles(&overworld, &camera);
+    DrawTiles(&overworld, &player);
     DrawSprite(&player);
     EndMode2D();
 
