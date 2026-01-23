@@ -8,4 +8,4 @@ typedef struct {
   i32 height;
 } Overworld;
 
-void DrawTiles(Overworld *overworld, Player *player);
+void DrawTiles(Overworld overworld, Vector2 center);

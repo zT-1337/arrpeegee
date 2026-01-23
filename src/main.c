@@ -32,8 +32,8 @@ int main(void) {
     ClearBackground(BLACK);
 
     BeginMode2D(camera);
-    DrawTiles(&overworld, &player);
-    DrawSprite(&player);
+    DrawTiles(overworld, player.position);
+    DrawSprite(player);
     EndMode2D();
 
     DrawFPS(20, 20);
