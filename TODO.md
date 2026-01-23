@@ -14,7 +14,7 @@
 
 ## Debug System
 
-- [ ] Enable with command line arguments
+- [X] Enable with command line arguments
 - [ ] Toggle showing current fps
 - [ ] Toggle showing current player position and map name
 

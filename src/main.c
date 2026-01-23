@@ -1,9 +1,12 @@
+#include "../include/options.h"
 #include "../include/overworld.h"
 #include "../include/player.h"
 #include "../include/sizes.h"
 #include "raylib.h"
 
-int main(void) {
+int main(int argc, char **argv) {
+  Options options = parseOptions(argc, argv);
+
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "arrpeegee");
   SetTraceLogLevel(LOG_DEBUG);
   SetTargetFPS(60);
@@ -36,7 +39,9 @@ int main(void) {
     DrawSprite(player);
     EndMode2D();
 
-    DrawFPS(20, 20);
+    if (options.debugEnabled) {
+      DrawFPS(20, 20);
+    }
 
     EndDrawing();
   }
