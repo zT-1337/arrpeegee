@@ -5,4 +5,4 @@ typedef struct {
   Vector2 position;
 } Player;
 
-void DrawSprite(Player player);
+void DrawSprite(Player *player);
