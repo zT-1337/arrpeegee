@@ -1,3 +1,4 @@
+#include "../include/allocator.h"
 #include "../include/options.h"
 #include "../include/overworld.h"
 #include "../include/player.h"
@@ -11,7 +12,11 @@ int main(int argc, char **argv) {
   SetTraceLogLevel(LOG_DEBUG);
   SetTargetFPS(60);
 
-  Overworld overworld = {.width = 300, .height = 200};
+  Arena overworldArena = {0};
+  ArenaInit(&overworldArena, 1000 * 1000);
+
+  Overworld *overworld = LoadOverworld(&overworldArena, "resources/test.map");
+  TraceLog(LOG_DEBUG, "%ld %ld", overworldArena.used, overworldArena.capacity);
   Player player = {.position = {.x = 0, .y = 0}};
   Camera2D camera = {0};
   camera.offset = (Vector2){SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f};
@@ -35,8 +40,8 @@ int main(int argc, char **argv) {
     ClearBackground(BLACK);
 
     BeginMode2D(camera);
-    DrawTiles(overworld, player.position);
-    DrawSprite(player);
+    DrawTiles(overworld, &player.position);
+    DrawSprite(&player);
     EndMode2D();
 
     if (options.debugEnabled) {
@@ -45,6 +50,9 @@ int main(int argc, char **argv) {
 
     EndDrawing();
   }
+
+  UnloadOverworld(overworld);
+  ArenaFree(&overworldArena);
 
   CloseWindow();
 

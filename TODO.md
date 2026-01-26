@@ -7,7 +7,7 @@
 - [X] Camera movement based on the player movement
 - [ ] NPCs
 - [ ] Collision System
-- [ ] Simple test map with textures
+- [X] Simple test map with textures
 - [ ] Player with sprite
 - [ ] Animate walking player
 - [X] Optimize Tile Rendering, so that only visible tiles get rendered
