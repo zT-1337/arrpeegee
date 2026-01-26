@@ -16,7 +16,6 @@ int main(int argc, char **argv) {
   ArenaInit(&overworldArena, 1000 * 1000);
 
   Overworld *overworld = LoadOverworld(&overworldArena, "resources/test.map");
-  TraceLog(LOG_DEBUG, "%ld %ld", overworldArena.used, overworldArena.capacity);
   Player player = {.position = {.x = 0, .y = 0}};
   Camera2D camera = {0};
   camera.offset = (Vector2){SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f};
@@ -52,6 +51,8 @@ int main(int argc, char **argv) {
   }
 
   UnloadOverworld(overworld);
+  TraceLog(LOG_DEBUG, "Used %ld bytes of %ld from overworldArena", overworldArena.used,
+           overworldArena.capacity);
   ArenaFree(&overworldArena);
 
   CloseWindow();
